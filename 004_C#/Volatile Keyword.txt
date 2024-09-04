@@ -1,0 +1,15 @@
+
+
+To understand what volatile does to a variable, it's important to understand what happens when the variable is not volatile.
+
+    Variable is Non-volatile
+
+When two threads A & B are accessing a non-volatile variable, each thread will maintain a local copy of the variable in it's local cache. Any changes done by thread A in it's local cache won't be visible to the thread B.
+
+    Variable is volatile
+
+When variables are declared volatile it essentially means that threads should not cache such a variable or in other words threads should not trust the values of these variables unless they are directly read from the main memory.
+
+So, when to make a variable volatile?
+
+When you have a variable which can be accessed by many threads and you want every thread to get the latest updated value of that variable even if the value is updated by any other thread/process/outside of the program.
